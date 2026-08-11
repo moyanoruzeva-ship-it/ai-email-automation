@@ -1,25 +1,21 @@
 from dotenv import load_dotenv
-from openai import OpenAI
 import os
+from openai import OpenAI
 
-# Cargar variables del archivo .env
+# Cargar las variables del archivo .env
 load_dotenv()
 
-# Crear cliente de OpenAI
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# Obtener la API Key
+api_key = os.getenv("OPENAI_API_KEY")
 
-# Pregunta que enviaremos a la IA
-pregunta = "Escribe un saludo amable para un cliente."
+# Crear el cliente de OpenAI
+client = OpenAI(api_key=api_key)
 
-# Llamada al modelo
-respuesta = client.chat.completions.create(
-    model="gpt-4.1-mini",
-    messages=[
-        {
-            "role": "user",
-            "content": pregunta
-        }
-    ]
+# Hacer una pregunta a la IA
+respuesta = client.responses.create(
+    model="gpt-5-mini",
+    input="Explica en una frase qué es la inteligencia artificial."
 )
 
-print(respuesta.choices[0].message.content)
+# Mostrar la respuesta
+print(respuesta.output_text)
