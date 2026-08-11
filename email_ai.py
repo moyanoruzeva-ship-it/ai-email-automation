@@ -2,9 +2,9 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel
 import os
+import csv
 
 
-# Estructura del análisis
 class AnalisisEmail(BaseModel):
     categoria: str
     prioridad: str
@@ -12,7 +12,6 @@ class AnalisisEmail(BaseModel):
     respuesta: str
 
 
-# Cargar la API Key
 load_dotenv()
 
 api_key = os.getenv("OPENAI_API_KEY")
@@ -20,19 +19,17 @@ api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 
-# Leer los emails del archivo
 with open("emails_prueba.txt", "r", encoding="utf-8") as archivo:
     contenido = archivo.read()
 
 
-# Separar los emails
 emails = contenido.split("EMAIL ")[1:]
 
+resultados = []
 
-# Analizar cada email
+
 for numero, email in enumerate(emails, start=1):
 
-    # Eliminar el número y espacios sobrantes
     email = email.split("\n", 1)[1].strip()
 
     print(f"\n========== EMAIL {numero} ==========\n")
@@ -80,3 +77,30 @@ Email del cliente:
 
     print("\n--- RESPUESTA SUGERIDA ---")
     print(analisis.respuesta)
+
+    resultados.append({
+        "email": email,
+        "categoria": analisis.categoria,
+        "prioridad": analisis.prioridad,
+        "sentimiento": analisis.sentimiento,
+        "respuesta": analisis.respuesta
+    })
+
+
+with open("resultados_emails.csv", "w", newline="", encoding="utf-8") as archivo:
+
+    campos = [
+        "email",
+        "categoria",
+        "prioridad",
+        "sentimiento",
+        "respuesta"
+    ]
+
+    escritor = csv.DictWriter(archivo, fieldnames=campos)
+
+    escritor.writeheader()
+    escritor.writerows(resultados)
+
+
+print("\n✅ Resultados guardados en resultados_emails.csv")
