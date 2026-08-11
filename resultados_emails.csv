@@ -1,33 +1,39 @@
-email,categoria,prioridad,sentimiento,respuesta
-"Hola, hice un pedido hace una semana y todavía no lo he recibido. ¿Podrían decirme cuándo llegará? Lo necesito urgentemente.",Reclamación,Alta,Negativo,"Hola, gracias por contactarnos. Lamentamos el retraso y la molestia que esto le esté ocasionando. Para poder localizar su pedido y darle una respuesta concreta, ¿podría facilitarnos el número de pedido y la dirección de envío (o el correo electrónico con el que realizó la compra)? Si dispone del número de seguimiento, por favor envíelo también.
+remitente,asunto,cuerpo,categoria,prioridad,sentimiento,respuesta
+cliente1@email.com,Pedido retrasado,"Hola, hice un pedido hace una semana y todavía no lo he recibido.
+Necesito saber cuándo llegará porque lo necesito urgentemente.",Pedido,Alta,Negativo,"Hola,
 
-En cuanto recibamos esos datos, contactaremos con la mensajería y le informaremos del estado de su envío en un plazo máximo de 24 horas laborables. Si el paquete aparece como perdido o hay un problema con la entrega, le propondré las opciones disponibles (envío prioritario de reemplazo o reembolso) y actuaremos con la máxima celeridad. Si necesita la entrega de forma urgente, indíquelo en su respuesta para priorizar su caso.
+Lamento mucho el retraso y la preocupación que te está causando. Para poder localizar tu pedido y darte una respuesta concreta, por favor facilítanos el número de pedido. Si no lo tienes, indícanos el nombre completo usado en el pedido y la dirección de envío.
 
-Sentimos mucho las molestias y agradecemos su paciencia. Quedamos a la espera de la información solicitada para proceder cuanto antes.
+En cuanto tengamos esos datos, comprobaremos el estado y te informaremos del plazo de entrega o de las opciones disponibles (envío urgente, reexpedición o reembolso) en un plazo máximo de 24 horas hábiles. Si necesitas que le demos prioridad por ser urgente, indícalo en tu respuesta y lo gestionaremos cuanto antes.
+
+Sentimos las molestias y gracias por avisarnos.
 
 Atentamente,
 Equipo de Atención al Cliente"
-"Buenos días, quería saber si tienen disponible el producto X en color azul y cuál es su precio. Gracias.",Consulta,Baja,Neutral,"Buenos días,
+cliente2@email.com,Consulta sobre producto,"Buenos días, quería saber si tienen disponible el producto X en color azul
+y cuál es su precio. Gracias.",Consulta,Baja,Neutral,"Buenos días,
 
-Gracias por su consulta. Con gusto comprobamos la disponibilidad y el precio del producto X en color azul. ¿Podría confirmarnos, por favor, el modelo o la referencia exacta del producto (si dispone de ella) y la talla o variante si aplica? Con esa información le confirmaremos el stock, el precio y el plazo estimado de entrega.
+Gracias por su consulta. Para confirmar disponibilidad en color azul y darle el precio actual, ¿puede indicarnos a qué variante se refiere (referencia, talla o modelo) y la cantidad que desea? Si lo prefiere, también puede facilitarnos su código postal para calcular envío y plazo de entrega.
 
-Si lo prefiere, también puede enviarnos el enlace o una foto del producto para identificarlo más rápido. Quedamos a la espera de su respuesta.
+En cuanto nos confirme esos datos le responderemos con la disponibilidad, el precio total y las opciones para realizar la compra.
 
-Un saludo cordial,
-Equipo de Atención al Cliente
-[Nombre de la empresa]"
-Estoy muy descontento con el servicio. El pedido llegó tarde y además el producto estaba roto. Quiero una solución y un reembolso.,Reclamación,Alta,Negativo,"Estimado/a cliente,
+Un saludo,
+Atención al Cliente"
+cliente3@email.com,Producto recibido en mal estado,"Estoy muy descontento con el servicio. El pedido llegó tarde y además
+el producto estaba roto. Quiero una solución y un reembolso.",Reclamación,Alta,Negativo,"Estimado/a cliente,
 
-Lamentamos mucho que su pedido llegara tarde y que además el producto estuviera roto. Le pedimos disculpas por las molestias ocasionadas.
+Lamentamos mucho que su pedido llegara tarde y que además el producto estuviera roto. Le pedimos disculpas por las molestias causadas y trabajaremos para solucionarlo cuanto antes.
 
-Para poder gestionar una solución con prioridad y proceder al reembolso o al envío de un reemplazo, por favor facilítenos lo siguiente:
-- Número de pedido
-- Fotografías del producto dañado y, si es posible, del embalaje
-- Fecha en que recibió el paquete
+Para poder gestionar la incidencia y tramitar el reembolso o la sustitución, por favor envíenos lo siguiente:
+- Número de pedido.
+- Fotografías del producto dañado y, si es posible, del embalaje.
+- Indique si prefiere un reembolso completo o la sustitución del producto.
 
-Una vez recibida esta información, le ofrecemos dos opciones: 1) reembolso completo del importe (tramitaremos el abono en un plazo de 3 días hábiles; el tiempo hasta que se vea reflejado depende de su entidad bancaria, normalmente 5–10 días hábiles), o 2) envío de un reemplazo sin coste adicional (lo procesaremos en 24–48 horas tras la confirmación). Si es necesario devolver el artículo, le enviaremos una etiqueta de devolución prepagada.
+En cuanto recibamos estos datos, iniciaremos la comprobación y le informaremos de los siguientes pasos. Si opta por reembolso, normalmente se procesa en cuanto confirmemos la incidencia y se verá reflejado en su método de pago en un plazo aproximado de 5-10 días hábiles. Si prefiere sustitución, le confirmaremos disponibilidad y plazo de envío. Si es necesario, también podemos facilitar una etiqueta de devolución prepagada o gestionar la recogida sin coste adicional.
 
-Indíquenos qué opción prefiere y envíe los datos solicitados para que lo gestionemos de inmediato. Lamentamos las molestias y agradecemos que nos lo haya comunicado; vamos a resolverlo cuanto antes.
+Si necesita atención más rápida, responda a este correo indicando un número de teléfono y horario de contacto y nuestro equipo de Atención al Cliente le llamará.
+
+Gracias por avisarnos y por su paciencia. Quedamos a la espera de los datos solicitados para resolverlo cuanto antes.
 
 Atentamente,
 Equipo de Atención al Cliente"
