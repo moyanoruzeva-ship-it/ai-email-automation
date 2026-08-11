@@ -1,36 +1,70 @@
 from dotenv import load_dotenv
-import os
 from openai import OpenAI
+from pydantic import BaseModel
+import os
 
-# Cargar las variables del archivo .env
+
+# Estructura que queremos recibir de la IA
+class AnalisisEmail(BaseModel):
+    categoria: str
+    prioridad: str
+    sentimiento: str
+    respuesta: str
+
+
+# Cargar variables del archivo .env
 load_dotenv()
 
-# Obtener la API Key
+# Obtener API Key
 api_key = os.getenv("OPENAI_API_KEY")
 
-# Crear el cliente de OpenAI
+# Crear cliente
 client = OpenAI(api_key=api_key)
 
-# Email de prueba
+
+# Pedir un email al usuario
 email = input("Introduce el email del cliente:\n")
 
-# Pedir a la IA que analice el email
-respuesta = client.responses.create(
+
+# Analizar el email
+resultado = client.responses.parse(
     model="gpt-5-mini",
     input=f"""
 Analiza el siguiente email de un cliente.
 
-Indica:
-1. Categoría del email: Pedido, Consulta, Reclamación u Otro.
-2. Prioridad: Baja, Media o Alta.
-3. Sentimiento: Positivo, Neutral o Negativo.
-4. Escribe una respuesta profesional y amable para el cliente.
+Clasifica el email utilizando estas categorías:
 
-Email:
+- Pedido
+- Consulta
+- Reclamación
+- Otro
+
+La prioridad debe ser:
+
+- Baja
+- Media
+- Alta
+
+El sentimiento debe ser:
+
+- Positivo
+- Neutral
+- Negativo
+
+Después escribe una respuesta profesional, clara y amable.
+
+Email del cliente:
 {email}
-"""
+""",
+    text_format=AnalisisEmail,
 )
 
-# Mostrar el resultado
+
+# Mostrar resultados
 print("\n--- ANÁLISIS DEL EMAIL ---\n")
-print(respuesta.output_text)
+print("Categoría:", resultado.output_parsed.categoria)
+print("Prioridad:", resultado.output_parsed.prioridad)
+print("Sentimiento:", resultado.output_parsed.sentimiento)
+
+print("\n--- RESPUESTA SUGERIDA ---\n")
+print(resultado.output_parsed.respuesta)
