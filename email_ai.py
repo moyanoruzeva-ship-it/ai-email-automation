@@ -12,14 +12,7 @@ api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 # Email de prueba
-email = """
-Hola,
-
-Hice un pedido hace una semana y todavía no lo he recibido.
-¿Podrían decirme cuándo llegará?
-
-Gracias.
-"""
+email = input("Introduce el email del cliente:\n")
 
 # Pedir a la IA que analice el email
 respuesta = client.responses.create(
