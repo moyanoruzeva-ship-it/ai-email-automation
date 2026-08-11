@@ -4,7 +4,7 @@ from pydantic import BaseModel
 import os
 
 
-# Estructura que queremos recibir de la IA
+# Estructura del análisis
 class AnalisisEmail(BaseModel):
     categoria: str
     prioridad: str
@@ -12,24 +12,36 @@ class AnalisisEmail(BaseModel):
     respuesta: str
 
 
-# Cargar variables del archivo .env
+# Cargar la API Key
 load_dotenv()
 
-# Obtener API Key
 api_key = os.getenv("OPENAI_API_KEY")
 
-# Crear cliente
 client = OpenAI(api_key=api_key)
 
 
-# Pedir un email al usuario
-email = input("Introduce el email del cliente:\n")
+# Leer los emails del archivo
+with open("emails_prueba.txt", "r", encoding="utf-8") as archivo:
+    contenido = archivo.read()
 
 
-# Analizar el email
-resultado = client.responses.parse(
-    model="gpt-5-mini",
-    input=f"""
+# Separar los emails
+emails = contenido.split("EMAIL ")[1:]
+
+
+# Analizar cada email
+for numero, email in enumerate(emails, start=1):
+
+    # Eliminar el número y espacios sobrantes
+    email = email.split("\n", 1)[1].strip()
+
+    print(f"\n========== EMAIL {numero} ==========\n")
+    print("Email recibido:")
+    print(email)
+
+    resultado = client.responses.parse(
+        model="gpt-5-mini",
+        input=f"""
 Analiza el siguiente email de un cliente.
 
 Clasifica el email utilizando estas categorías:
@@ -56,15 +68,15 @@ Después escribe una respuesta profesional, clara y amable.
 Email del cliente:
 {email}
 """,
-    text_format=AnalisisEmail,
-)
+        text_format=AnalisisEmail,
+    )
 
+    analisis = resultado.output_parsed
 
-# Mostrar resultados
-print("\n--- ANÁLISIS DEL EMAIL ---\n")
-print("Categoría:", resultado.output_parsed.categoria)
-print("Prioridad:", resultado.output_parsed.prioridad)
-print("Sentimiento:", resultado.output_parsed.sentimiento)
+    print("\n--- ANÁLISIS ---")
+    print("Categoría:", analisis.categoria)
+    print("Prioridad:", analisis.prioridad)
+    print("Sentimiento:", analisis.sentimiento)
 
-print("\n--- RESPUESTA SUGERIDA ---\n")
-print(resultado.output_parsed.respuesta)
+    print("\n--- RESPUESTA SUGERIDA ---")
+    print(analisis.respuesta)
