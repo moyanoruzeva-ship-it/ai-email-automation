@@ -21,41 +21,11 @@ api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 
-# Leer los emails
-with open("emails_prueba.txt", "r", encoding="utf-8") as archivo:
-    contenido = archivo.read()
+def analizar_email(remitente, asunto, cuerpo):
+    """
+    Analiza un email utilizando inteligencia artificial.
+    """
 
-
-# Separar los emails
-emails = re.split(r"EMAIL\s+\d+", contenido)[1:]
-
-resultados = []
-
-
-# Analizar cada email
-for numero, email in enumerate(emails, start=1):
-
-    # Eliminar líneas vacías
-    lineas = [
-        linea.strip()
-        for linea in email.strip().splitlines()
-        if linea.strip()
-    ]
-
-    # Obtener remitente y asunto
-    remitente = lineas[0].replace("De: ", "")
-    asunto = lineas[1].replace("Asunto: ", "")
-
-    # Obtener cuerpo
-    cuerpo = "\n".join(lineas[2:]).strip()
-
-    print(f"\n========== EMAIL {numero} ==========")
-    print("Remitente:", remitente)
-    print("Asunto:", asunto)
-    print("Cuerpo:")
-    print(cuerpo)
-
-    # Analizar el email con IA
     resultado = client.responses.parse(
         model="gpt-5-mini",
         input=f"""
@@ -118,16 +88,47 @@ Elige una sola categoría.
 Elige una sola prioridad.
 Elige un solo sentimiento.
 
-No cambies la categoría basándote únicamente
-en el tono del mensaje.
-
 Después genera una respuesta profesional,
 clara y amable para el cliente.
 """,
         text_format=AnalisisEmail,
     )
 
-    analisis = resultado.output_parsed
+    return resultado.output_parsed
+
+
+# Leer los emails de prueba
+with open("emails_prueba.txt", "r", encoding="utf-8") as archivo:
+    contenido = archivo.read()
+
+
+emails = re.split(r"EMAIL\s+\d+", contenido)[1:]
+
+resultados = []
+
+
+# Procesar cada email
+for numero, email in enumerate(emails, start=1):
+
+    lineas = [
+        linea.strip()
+        for linea in email.strip().splitlines()
+        if linea.strip()
+    ]
+
+    remitente = lineas[0].replace("De: ", "")
+    asunto = lineas[1].replace("Asunto: ", "")
+    cuerpo = "\n".join(lineas[2:]).strip()
+
+    print(f"\n========== EMAIL {numero} ==========")
+    print("Remitente:", remitente)
+    print("Asunto:", asunto)
+
+    analisis = analizar_email(
+        remitente,
+        asunto,
+        cuerpo
+    )
 
     print("\n--- ANÁLISIS ---")
     print("Categoría:", analisis.categoria)
@@ -137,7 +138,6 @@ clara y amable para el cliente.
     print("\n--- RESPUESTA SUGERIDA ---")
     print(analisis.respuesta)
 
-    # Guardar resultado
     resultados.append({
         "remitente": remitente,
         "asunto": asunto,
@@ -149,7 +149,7 @@ clara y amable para el cliente.
     })
 
 
-# Guardar todos los resultados en CSV
+# Guardar resultados
 with open(
     "resultados_emails.csv",
     "w",

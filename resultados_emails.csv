@@ -2,38 +2,16 @@ remitente,asunto,cuerpo,categoria,prioridad,sentimiento,respuesta
 cliente1@email.com,Pedido retrasado,"Hola, hice un pedido hace una semana y todavía no lo he recibido.
 Necesito saber cuándo llegará porque lo necesito urgentemente.",Pedido,Alta,Negativo,"Hola,
 
-Lamento mucho el retraso y la preocupación que te está causando. Para poder localizar tu pedido y darte una respuesta concreta, por favor facilítanos el número de pedido. Si no lo tienes, indícanos el nombre completo usado en el pedido y la dirección de envío.
+Lamentamos la demora y las molestias. Para poder revisar con urgencia el estado de su pedido y darle una solución lo antes posible, ¿puede facilitarnos el número de pedido (o la dirección de correo con la que hizo el pedido) y, si dispone, el número de seguimiento? Con esos datos contactaremos a la mensajería y le daremos una actualización en un plazo máximo de 24 horas hábiles.
 
-En cuanto tengamos esos datos, comprobaremos el estado y te informaremos del plazo de entrega o de las opciones disponibles (envío urgente, reexpedición o reembolso) en un plazo máximo de 24 horas hábiles. Si necesitas que le demos prioridad por ser urgente, indícalo en tu respuesta y lo gestionaremos cuanto antes.
-
-Sentimos las molestias y gracias por avisarnos.
-
-Atentamente,
-Equipo de Atención al Cliente"
+Si el pedido se ha perdido o hay un retraso prolongado, procederemos a acelerar el envío o a ofrecerle alternativas (reenvío o reembolso) según prefiera. Responda a este correo con la información solicitada y lo atenderemos con prioridad. Disculpe las molestias y gracias por su paciencia."
 cliente2@email.com,Consulta sobre producto,"Buenos días, quería saber si tienen disponible el producto X en color azul
-y cuál es su precio. Gracias.",Consulta,Baja,Neutral,"Buenos días,
+y cuál es su precio. Gracias.",Consulta,Baja,Neutral,"Hola, buenos días. Gracias por contactarnos.
 
-Gracias por su consulta. Para confirmar disponibilidad en color azul y darle el precio actual, ¿puede indicarnos a qué variante se refiere (referencia, talla o modelo) y la cantidad que desea? Si lo prefiere, también puede facilitarnos su código postal para calcular envío y plazo de entrega.
+¿Se refiere al producto “X” (puede indicar modelo o código si dispone de él)? Para confirmar la disponibilidad en color azul y facilitarle el precio necesito verificar el modelo/talla y su localidad (para calcular gastos de envío e impuestos si aplica).
 
-En cuanto nos confirme esos datos le responderemos con la disponibilidad, el precio total y las opciones para realizar la compra.
+Indíquenos esos datos y en breve le confirmamos si hay stock, el precio final y las opciones para comprar.
 
-Un saludo,
-Atención al Cliente"
+Quedo a la espera de su respuesta. Un saludo cordial del equipo de atención al cliente."
 cliente3@email.com,Producto recibido en mal estado,"Estoy muy descontento con el servicio. El pedido llegó tarde y además
-el producto estaba roto. Quiero una solución y un reembolso.",Reclamación,Alta,Negativo,"Estimado/a cliente,
-
-Lamentamos mucho que su pedido llegara tarde y que además el producto estuviera roto. Le pedimos disculpas por las molestias causadas y trabajaremos para solucionarlo cuanto antes.
-
-Para poder gestionar la incidencia y tramitar el reembolso o la sustitución, por favor envíenos lo siguiente:
-- Número de pedido.
-- Fotografías del producto dañado y, si es posible, del embalaje.
-- Indique si prefiere un reembolso completo o la sustitución del producto.
-
-En cuanto recibamos estos datos, iniciaremos la comprobación y le informaremos de los siguientes pasos. Si opta por reembolso, normalmente se procesa en cuanto confirmemos la incidencia y se verá reflejado en su método de pago en un plazo aproximado de 5-10 días hábiles. Si prefiere sustitución, le confirmaremos disponibilidad y plazo de envío. Si es necesario, también podemos facilitar una etiqueta de devolución prepagada o gestionar la recogida sin coste adicional.
-
-Si necesita atención más rápida, responda a este correo indicando un número de teléfono y horario de contacto y nuestro equipo de Atención al Cliente le llamará.
-
-Gracias por avisarnos y por su paciencia. Quedamos a la espera de los datos solicitados para resolverlo cuanto antes.
-
-Atentamente,
-Equipo de Atención al Cliente"
+el producto estaba roto. Quiero una solución y un reembolso.",Reclamación,Alta,Negativo,"Lamentamos mucho los inconvenientes y el mal estado del producto recibido. Sentimos además el retraso en la entrega. Para poder gestionarlo cuanto antes, ¿puede indicarnos su número de pedido y enviarnos fotografías del producto dañado y del embalaje? En cuanto recibamos esa información le ofreceremos las opciones disponibles (reembolso completo o envío de un reemplazo) y, si procede, le enviaremos una etiqueta de devolución sin coste. Tramitaríamos el reembolso tan pronto como confirmemos la recepción del artículo o la verificación del daño; el abono suele hacerse en 3-7 días hábiles dependiendo del método de pago. Si prefiere, puede responder a este correo o contactarnos por teléfono en [número de atención] para agilizar la gestión. Gracias por avisarnos; resolveremos esto con prioridad."
