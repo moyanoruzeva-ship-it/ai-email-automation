@@ -1,5 +1,7 @@
 import streamlit as st
 from email_ai import analizar_email
+import csv
+import os
 
 
 st.set_page_config(
@@ -7,9 +9,11 @@ st.set_page_config(
     page_icon="📧"
 )
 
-
 st.title("📧 Analizador de Emails con IA")
-st.write("Analiza automáticamente emails de clientes utilizando inteligencia artificial.")
+st.write(
+    "Analiza automáticamente correos electrónicos de clientes "
+    "utilizando inteligencia artificial."
+)
 
 
 remitente = st.text_input(
@@ -25,16 +29,17 @@ asunto = st.text_input(
 cuerpo = st.text_area(
     "Email del cliente",
     height=200,
-    placeholder="Escribe aquí el contenido del email..."
+    placeholder="Escribe aquí el contenido del correo electrónico..."
 )
 
 
-if st.button("🤖 Analizar email"):
+if st.button("🤖 Analizar correo electrónico"):
 
     if not cuerpo.strip():
-        st.warning("Escribe el contenido del email antes de analizarlo.")
+        st.warning("Escribe el contenido del correo antes de analizarlo.")
 
     else:
+
         with st.spinner("Analizando el email con IA..."):
 
             analisis = analizar_email(
@@ -59,3 +64,51 @@ if st.button("🤖 Analizar email"):
         st.subheader("✍️ Respuesta sugerida")
 
         st.write(analisis.respuesta)
+
+
+        # Guardar el resultado en CSV
+
+        archivo_csv = "resultados_emails.csv"
+
+        campos = [
+            "remitente",
+            "asunto",
+            "cuerpo",
+            "categoria",
+            "prioridad",
+            "sentimiento",
+            "respuesta"
+        ]
+
+        existe_archivo = os.path.exists(archivo_csv)
+        archivo_vacio = (
+            not existe_archivo
+            or os.path.getsize(archivo_csv) == 0
+        )
+
+        with open(
+            archivo_csv,
+            "a",
+            newline="",
+            encoding="utf-8"
+        ) as archivo:
+
+            escritor = csv.DictWriter(
+                archivo,
+                fieldnames=campos
+            )
+
+            if archivo_vacio:
+                escritor.writeheader()
+
+            escritor.writerow({
+                "remitente": remitente,
+                "asunto": asunto,
+                "cuerpo": cuerpo,
+                "categoria": analisis.categoria,
+                "prioridad": analisis.prioridad,
+                "sentimiento": analisis.sentimiento,
+                "respuesta": analisis.respuesta
+            })
+
+        st.success("✅ Análisis guardado en resultados_emails.csv")

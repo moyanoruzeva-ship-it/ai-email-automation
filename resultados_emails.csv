@@ -1,30 +1,36 @@
 remitente,asunto,cuerpo,categoria,prioridad,sentimiento,respuesta
 cliente1@email.com,Pedido retrasado,"Hola, hice un pedido hace una semana y todavía no lo he recibido.
-Necesito saber cuándo llegará porque lo necesito urgentemente.",Pedido,Alta,Negativo,"Hola,
+Necesito saber cuándo llegará porque lo necesito urgentemente.",Pedido,Alta,Negativo,"Hola, siento mucho que tu pedido aún no haya llegado y entiendo la urgencia. Para poder localizarlo y darte una solución lo antes posible, ¿puedes facilitarme el número de pedido o el correo y nombre con el que realizaste la compra? Si crees que la dirección de entrega puede estar equivocada, indícanosla también. 
 
-Lamentamos el retraso y las molestias que esto le está ocasionando. Para poder comprobar el estado exacto de su envío y darle una solución lo antes posible, ¿puede facilitarnos por favor el número de pedido y el nombre completo asociado al mismo? Si dispone de teléfono o dirección de entrega, también ayudará a agilizar la comprobación.
+En cuanto tenga esos datos revisaré el estado con la mensajería y te doy una respuesta en un plazo máximo de 24 horas con la localización y las opciones disponibles (entrega urgente, reenvío o reembolso). Gracias por avisarnos y disculpa las molestias."
+cliente2@email.com,Consulta sobre producto,"Buenos días, quería saber si tienen disponible el producto X en color azul
+y cuál es su precio. Gracias.",Consulta,Baja,Neutral,"Buenos días,
 
-En cuanto recibamos esos datos, contactaremos con el transportista y le informaremos del estado en un plazo máximo de 24 horas laborables. Si lo prefiere, podemos priorizar la gestión del envío o valorar alternativas (reexpedición urgente, reembolso o compensación) según el resultado.
+Gracias por su consulta. Para poder comprobar la disponibilidad y el precio del producto X en color azul, ¿podría confirmar si se refiere al modelo X (o facilitarnos el código/producto exacto) y, si procede, la talla o versión que necesita? 
 
-Quedamos a la espera de su respuesta para resolverlo cuanto antes.
+En cuanto nos confirme esos datos, comprobaré el stock y le enviaré el precio y las opciones de compra y envío lo antes posible (normalmente en menos de 24 horas).
+
+Quedo a la espera de su respuesta. Un saludo cordial,
+Equipo de Atención al Cliente"
+cliente3@email.com,Producto recibido en mal estado,"Estoy muy descontento con el servicio. El pedido llegó tarde y además
+el producto estaba roto. Quiero una solución y un reembolso.",Reclamación,Alta,Negativo,"Estimado/a cliente,
+
+Lamentamos mucho la experiencia. Entendemos que su pedido llegó con retraso y además el producto estaba roto; nos disculpamos por las molestias y queremos resolverlo cuanto antes.
+
+Para proceder, por favor facilítenos: 1) número de pedido, 2) fotografías del producto dañado y del embalaje, y 3) si prefiere reembolso o envío de un reemplazo. 
+
+Opciones que podemos ofrecerle inmediatamente: 
+- Reembolso completo del importe (si lo prefiere, lo gestionamos tan pronto como verifiquemos la información). 
+- Envío de un producto de reemplazo con prioridad. 
+
+Si opta por devolución, le enviaremos una etiqueta de devolución prepagada o gestionaremos la recogida sin coste adicional. Una vez aprobada la incidencia, el reembolso se procesará en un plazo aproximado de 3–7 días hábiles según el método de pago.
+
+Responda a este correo con los datos solicitados y procedemos de inmediato. Sentimos las molestias ocasionadas y agradecemos su paciencia; estamos a su disposición para resolverlo cuanto antes.
 
 Atentamente,
 Servicio de Atención al Cliente"
-cliente2@email.com,Consulta sobre producto,"Buenos días, quería saber si tienen disponible el producto X en color azul
-y cuál es su precio. Gracias.",Consulta,Baja,Neutral,"Buenos días, gracias por su consulta. Para poder comprobar la disponibilidad y facilitarle el precio del producto X en color azul, ¿podría confirmarnos si se refiere al modelo o referencia concreta (o enviarnos el enlace)? También indíquenos, por favor, la cantidad deseada y la dirección de envío o código postal si necesita el precio con gastos de envío. En cuanto nos facilite esos datos le confirmaremos disponibilidad y le enviaremos el precio. Quedamos a su disposición. Un saludo, Servicio de Atención al Cliente"
-cliente3@email.com,Producto recibido en mal estado,"Estoy muy descontento con el servicio. El pedido llegó tarde y además
-el producto estaba roto. Quiero una solución y un reembolso.",Reclamación,Alta,Negativo,"Hola,
+,,Pedí un jersei hace semanas y no me ha llegado.,Pedido,Alta,Negativo,"Hola — sentimos mucho el retraso y las molestias. Para poder localizar tu pedido y darte una solución lo antes posible, por favor facilítanos el número de pedido o, si no lo tienes, el nombre completo y la dirección de correo con la que realizaste la compra. 
 
-Lamentamos mucho que su pedido llegara tarde y que además el producto estuviera dañado. Gracias por avisarnos; queremos resolverlo cuanto antes.
+En cuanto recibamos esos datos verificaremos el estado con la mensajería y te informaremos del seguimiento en 24–48 horas laborables. Si el pedido aparece como perdido o no puede entregarse, procederemos a ofrecerte reenvío urgente o reembolso completo según prefieras. 
 
-Para gestionar el reembolso o el cambio, por favor facilítenos:
-- Número de pedido
-- Fotografías del embalaje y del producto dañado
-- Indíquenos si prefiere reembolso o reemplazo
-
-En cuanto recibamos esa información iniciaremos el proceso. Si solicita reembolso, lo procesaremos en un plazo de 3-5 días hábiles desde la confirmación y le informaremos cuando esté completado. Si prefiere reemplazo, le indicaremos los pasos para el envío de la nueva unidad y la recogida o devolución del artículo dañado.
-
-Pedimos disculpas por las molestias y trabajaremos para solucionarlo rápidamente. Si necesita asistencia urgente, responda a este correo y uno de nuestros agentes le atenderá.
-
-Atentamente,
-Equipo de Atención al Cliente"
+Quedamos a la espera de la información para gestionar esto de inmediato. Gracias por avisarnos y disculpa las molestias."
